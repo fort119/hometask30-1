@@ -132,7 +132,7 @@ function formBuilder(parent, callbackForLabel, callbackForInput) {
   formItemDiv.classList.add("form__item");
 
   // name and surname input
-  const labelForNameInput = callbackForLabel("fname", "ПІБ:");
+  const labelForNameInput = callbackForLabel("fname", "Name and surname:");
   const inputForName = callbackForInput("text", "fname", "fname", "required");
   let cloneOfDivForName = formItemDiv.cloneNode(true);
 
@@ -146,16 +146,16 @@ function formBuilder(parent, callbackForLabel, callbackForInput) {
   divForPaymentRadio.classList.add("payment-radio__inner");
   const radioSetForPayment = `
     <fieldset>
-      <legend>Способ оплаты:</legend>
+      <legend>Type of payment:</legend>
 
       <div>
         <label>
-          <input type="radio" name="pay" value="cash" checked>карта
+          <input type="radio" name="pay" value="cash" checked>card
         </label>
       </div>
       <div>
         <label>
-          <input type="radio" name="pay" value="card">наложка
+          <input type="radio" name="pay" value="card">cash
         </label>
       </div>
 
@@ -175,6 +175,7 @@ function formBuilder(parent, callbackForLabel, callbackForInput) {
       </select>
  `
   divForCitySelect.innerHTML = citySelect;
+
   //amount of goods to order input
   const labelForAmount = callbackForLabel("amountOfpieces", "amountOfpieces:");
   const inputForAmount = callbackForInput("number", "number", "amountOfpieces", "required", "100", "1");
@@ -274,7 +275,7 @@ function showOrder(nameOfGood, nameOfClient, postDep, amountOfGoods) {
         <td>Your post department: ${postDep.value}</td
       </tr>
       <tr>
-         <td>Your amount: ${amountOfGoods.value}</td
+         <td>Amount: ${amountOfGoods.value}</td
       </tr>
     </table>
 `
